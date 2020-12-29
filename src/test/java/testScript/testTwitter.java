@@ -10,29 +10,27 @@ import library.baseTest;
 import pageObject.googleSearchPageObject;
 import pageObject.searchResultPageObject;
 
-public class testInstagram extends baseTest{
-
+public class testTwitter extends baseTest{
+	
 	@Test
-	public void instagram() {
+	public void twitterLink() {
 		try {
 			googleSearchPageObject gsp = new googleSearchPageObject(driver);
-			gsp.searchTextBox().sendKeys("Instagram");
+			gsp.searchTextBox().sendKeys("twitter");
 			gsp.searchTextBox().sendKeys(Keys.ENTER);
 			
 			searchResultPageObject srp = new searchResultPageObject(driver);
-			srp.instagramLink().click();
+			srp.twitterLink().click();
 			
-			String expTitle="Instagram";
+			String expTitle = "Twitter";
 			String actTitle = driver.getTitle();
-			System.out.println(actTitle);
 			
 			AssertJUnit.assertEquals(expTitle, actTitle);
-			Reporter.log("Instagram Title is matched!!", true);
-			
-		} catch(Exception e) {
-			Reporter.log("Instagram Title is not matched!!", true);
+			Reporter.log("Twitter link is matched", true);
+		}catch(Exception e) {
+			Reporter.log("Twitter Link is not matched!!", true);
 			Assert.fail();
 		}
 	}
-	
+
 }

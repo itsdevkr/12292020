@@ -18,5 +18,11 @@ public class searchResultPageObject extends basePage{
 	public WebElement instagramLink() {
 		return instagramLink;
 	}
+	
+	@FindBy(xpath="//h3[@class='LC20lb DKV0Md']")
+	public WebElement twitterLink;
+	public WebElement twitterLink() {
+		return twitterLink;
+	}
 
 }
